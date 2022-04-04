@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+body {
+  background: linear-gradient(-45deg, #e88061, #dd5489, #50b9df, #69e1c5);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: "Orbitron";
+  .app__header {
+    #logo__timer {
+      height: 100px;
+      pointer-events: none;
+      animation: logoRotate 60s linear infinite;
+      animation-play-state: paused;
+    }
+    @keyframes logoRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .app__name {
+      padding: 0 20px;
+    }
+  }
+  .digital__timer {
+    height: 150px;
+    width: 200px;
+    background-color: black;
+    h1 {
+      font-size: 100px;
+      color: white;
+    }
+  }
+}
