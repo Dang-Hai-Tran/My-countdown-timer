@@ -38,6 +38,9 @@ const Form = () => {
     }
     intervalId.current = setInterval(() => {
       timeleftInSeconds -= 1;
+      if (timeleftInSeconds === 0) {
+        reset();
+      }
       const hours = Math.floor(timeleftInSeconds / 3600);
       const mins = Math.floor((timeleftInSeconds - hours * 3600) / 60);
       const seconds = timeleftInSeconds - hours * 3600 - mins * 60;
@@ -60,6 +63,7 @@ const Form = () => {
     if (intervalId.current) {
       clearInterval(intervalId.current);
     }
+    resetInput();
     setTimer({
       hours: 0,
       mins: 0,
